@@ -1,0 +1,15 @@
+.y_back_w{
+    background-color: #D8C1AE;
+    padding: 80px 0;
+    .y_g_w{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        align-items: center;
+    }
+    p{
+        font-size: 16px;
+        line-height: 40px;
+        color: #FFFFFF;
+    }
+}

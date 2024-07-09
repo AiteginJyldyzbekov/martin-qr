@@ -2,6 +2,7 @@ import { type BuildOptions } from './types/config'
 import type webpack from 'webpack'
 import { buildCssLoader } from './loaders/buildCssLoader'
 import { buildPhotoViewCssLoader } from './loaders/buildPhotoViewLoader'
+import { buildReactSlickLoader } from './loaders/buildReactSlickLoader'
 
 export function buildLoaders ({ isDev }: BuildOptions): webpack.RuleSetRule[] {
   const svgLoader = {
@@ -33,12 +34,19 @@ export function buildLoaders ({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     test: /\.(png|jpe?g|gif)$/i,
     use: [
       {
-        loader: 'file-loader'
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]',
+          outputPath: 'images/',
+          publicPath: 'images/'
+        }
       }
     ]
-  }
+    
+  }  
 
   const cssLoader = buildCssLoader(isDev)
+  const slickLoader = buildReactSlickLoader(isDev)
   const photoViewLoader = buildPhotoViewCssLoader(isDev)
 
   const typescriptLoader = {
@@ -53,6 +61,7 @@ export function buildLoaders ({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     babelLoader,
     typescriptLoader,
     cssLoader,
-    photoViewLoader
+    photoViewLoader,
+    slickLoader
   ]
 }

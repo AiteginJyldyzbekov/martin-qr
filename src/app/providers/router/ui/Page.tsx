@@ -1,3 +1,5 @@
+import Footer from 'components/Footer/Footer'
+import Header from 'components/header/Header'
 import { NotFoundPage } from 'pages/NotFoundPage'
 import { Suspense } from 'react'
 import { Route, Routes } from 'react-router-dom'
@@ -16,7 +18,9 @@ const Page: React.FC<PageProps> = ({ routes }) => {
                         key={path}
                         element={(
                             <div className="page-wrapper">
+                                <Header />
                                 {element}
+                                <Footer />
                             </div>
                         )}
                         path={path}

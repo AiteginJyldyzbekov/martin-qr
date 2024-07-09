@@ -1,0 +1,23 @@
+.news_card_w{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+}
+.news_w{
+    h2{
+    padding: 40px 0;
+        text-align: center;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    >a{
+        display: block;
+        border: 1px solid black;
+        color: black;
+        padding: 15px;
+        width: 30%;
+        text-align: center;
+        margin-top: 30px;
+    }
+}

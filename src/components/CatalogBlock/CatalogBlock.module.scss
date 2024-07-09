@@ -1,0 +1,18 @@
+.h2{
+    padding: 30px 0;
+}
+.c_card_wrapper {
+    display: grid;
+    gap: 30px;
+  }
+  
+  .grid_three {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .grid_two {
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: 30px;
+  }
+  
+  

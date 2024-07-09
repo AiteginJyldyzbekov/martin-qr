@@ -1,0 +1,48 @@
+.card_w {
+    height: 480px; /* Adjust as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 40px;
+    overflow: hidden; /* To ensure the scaling image doesn't overflow the card */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    p {
+      color: #FFFFFF;
+      font-size: 50px;
+      z-index: 1;
+    }
+  
+    a {
+      position: absolute;
+      padding: 20px;
+      width: 80%;
+      text-align: center;
+      background-color: #FFFFFF;
+      bottom: 40px;
+      z-index: 1;
+    }
+  
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-size: inherit;
+      background-position: inherit;
+      background-repeat: inherit;
+      background-image: inherit;
+      transition: transform 0.3s ease-in-out;
+      z-index: 0;
+    }
+  
+    &:hover::before {
+      transform: scale(1.2);
+    }
+  }
+  

@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+.footer_top{
+    display: flex;
+    height: 120px;
+    align-items: center;
+    justify-content: space-between;
+    .logo{
+        font-family: "Playfair Display", serif !important;
+        font-size: 32px;
+    }
+    a{
+        text-transform: uppercase;
+        font-size: 17px;
+        font-weight: 700;
+    }
+    .social_nav{
+        display: flex;
+        gap: 80px;
+    }
+}
+.footer_bottom{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "ber bet . bey"
+    ;
+    margin-bottom: 60px;
+    .ber{
+        grid-area: ber;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        p{
+            font-weight: 700;
+        }
+        a{
+            display: block;
+            color: #565656;
+
+        }
+    }
+    .bet{
+        grid-area: bet;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        p{
+            font-weight: 700;
+        }
+        a{
+            display: block;
+            color: #565656;
+
+        }
+
+    }
+    .bey{
+        grid-area: bey;
+        >div{
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            a{
+                font-weight: 700;
+                font-size: 16px;
+            }
+        }
+        p{
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 100px;
+        }
+        button{
+            margin-top: 20px;
+            background-color: #383D45;
+            padding: 15px;
+            width: 100%;
+            color: white;
+            outline: 0;
+            border: 0;
+        }
+    }
+}

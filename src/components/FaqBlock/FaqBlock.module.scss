@@ -1,0 +1,57 @@
+.faqblock_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    h2 {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    
+    .faqblock_card_w {
+      width: 80%;
+      
+      > div {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    
+    .faq_card {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      &:not(:last-child){
+      border-bottom: 3px solid black;
+
+      }
+      transition: height 0.3s ease, opacity 0.3s ease;
+      
+      .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+        width: 100%;
+        
+        .left {
+          font-size: 20px;
+        }
+      }
+      
+      .bottom {
+        height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: height 0.3s ease, opacity 0.3s ease;    
+        padding: 0;
+      }
+      
+      &.active .bottom {
+        height: auto; /* позволяет содержимому расширяться по высоте */
+        opacity: 1;
+        padding: 20px 0;
+      }
+    }
+  }
+  

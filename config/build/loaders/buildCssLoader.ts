@@ -9,6 +9,8 @@ export function buildCssLoader (isDev: boolean) {
       {
         loader: 'css-loader',
         options: {
+          url:true,
+          esModule:false,
           modules: {
             auto: (resPath: string) => Boolean(resPath.includes('.module.')),
             localIdentName: isDev
@@ -17,7 +19,8 @@ export function buildCssLoader (isDev: boolean) {
           }
         }
       },
-      'sass-loader'
+      'sass-loader',
+      
     ]
   }
 }

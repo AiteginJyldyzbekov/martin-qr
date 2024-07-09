@@ -1,0 +1,17 @@
+.starRating {
+    display: flex;
+    
+    span {
+      font-size: 14px;
+      margin-right: 5px;
+    }
+  
+    .filledStar {
+      color: #4F4F4F;
+    }
+  
+    .emptyStar {
+      color: lightgray;
+    }
+  }
+  
