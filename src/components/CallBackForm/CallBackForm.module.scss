@@ -1,45 +1,48 @@
-.callB_w{
-    background-image: url("../../../public/images/back_g.png");
+.callB_w {
     height: 440px;
     display: flex;
     padding: 80px;
     flex-direction: column;
     justify-content: space-between;
-    .des_tit{
+
+    .des_tit {
         width: 75%;
     }
-    .title{
+
+    .title {
         font-size: 40px;
         font-weight: 700;
         color: white;
-
     }
-    .desc{
+
+    .desc {
         font-size: 14px;
         color: white;
     }
-    form{
+
+    form {
         display: flex;
         align-items: center;
         gap: 30px;
-        input{
+
+        input {
             border: 0;
             border-bottom: 1px solid white;
             background-color: transparent;
             padding: 15px 10px;
             outline: 0;
             color: white;
-            &::placeholder{
-            color: #CACCCD;
 
+            &::placeholder {
+                color: #CACCCD;
             }
         }
-        button{
+
+        button {
             color: white;
             background-color: black;
             padding: 15px 80px;
             border: 0;
         }
     }
-    
 }

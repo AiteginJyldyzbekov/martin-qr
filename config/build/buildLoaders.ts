@@ -37,8 +37,6 @@ export function buildLoaders ({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         loader: 'file-loader',
         options: {
           name: '[path][name].[ext]',
-          outputPath: 'images/',
-          publicPath: 'images/'
         }
       }
     ]
