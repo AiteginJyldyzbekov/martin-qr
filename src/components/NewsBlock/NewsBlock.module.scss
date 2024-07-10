@@ -1,23 +1,28 @@
-.news_card_w{
+.news_card_w {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 30px;
 }
-.news_w{
-    h2{
-    padding: 40px 0;
+
+.news_w {
+    h2 {
+        padding: 40px 0;
         text-align: center;
     }
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    >a{
+
+    >button {
         display: block;
-        border: 1px solid black;
-        color: black;
+        border: 2px solid #383D45;
+        color: #383D45;
         padding: 15px;
         width: 30%;
         text-align: center;
         margin-top: 30px;
+        background-color: white;
+        border-radius: 3px 0px 0px 0px;
     }
 }

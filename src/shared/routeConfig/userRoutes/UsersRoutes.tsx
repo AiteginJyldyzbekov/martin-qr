@@ -1,4 +1,4 @@
-import MainPage from 'pages/MainPage/ui/MainPage'
+import { MainPage } from 'pages/MainPage'
 import { CatalogPage } from 'pages/CatalogPage'
 import { ProductPage } from 'pages/ProductPage'
 import { type RouteProps } from 'react-router-dom'

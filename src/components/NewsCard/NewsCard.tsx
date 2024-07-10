@@ -1,7 +1,5 @@
-
-
 import scss from './NewsCard.module.scss';
-
+import React from 'react';
 
 interface NewsCardProps {
   img: any;
@@ -11,7 +9,7 @@ interface NewsCardProps {
   path: string;
 }
 
-const NewsCard: React.FC<NewsCardProps> = ({ img, date, title, desc, path }) => {
+const NewsCard: React.FC<NewsCardProps> = React.memo(({ img, date, title, desc, path }) => {
   return (
     <div className={scss.newsCard}>
       
@@ -22,10 +20,9 @@ const NewsCard: React.FC<NewsCardProps> = ({ img, date, title, desc, path }) => 
         <p className={scss.date}>{date}</p>
         <p className={scss.title}>{title}</p>
         <p className={scss.desc}>{desc}</p>
-        <a href={path}>Читать дальше →</a>
+        <a href={`/news/${path}`}>Читать дальше →</a>
       </div>
     </div>
   );
-}
-
+})
 export default NewsCard;

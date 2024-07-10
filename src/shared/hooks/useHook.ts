@@ -4,6 +4,8 @@ import {
     doc,
     getDoc,
     getDocs,
+    orderBy,
+    query,
     Timestamp,
     updateDoc,
 } from "firebase/firestore";
@@ -15,19 +17,19 @@ const useHook = (ref:string) => {
     const [items, setItems] = useState([]);
     const [itemDetail, setItemDetail] = useState(null);
     const [isLoading, setLoading] = useState(true);
-
-    const getProducts = useCallback(async () => {
-        const arr: any = [];
-        const data = await getDocs(collection(db, ref));
-        data.forEach((doc:any) => {
+    
+    const getItems = useCallback(async () => {
+        const arr:any = [];
+        const q = query(collection(db, ref), orderBy("createdAt", "desc"));
+        const data = await getDocs(q);
+        data.forEach((doc) => {
             arr.push({ tid: doc.id, ...doc.data() });
         });
         setItems(arr);
-        console.log(arr)
         setLoading(false);
-    }, []);
+    }, [ref]);
 
-    const getProductDetail = async (id: string) => {
+    const getItemDetail = async (id: string) => {
         const docRef = doc(db, ref, id);
         const res = await getDoc(docRef);
         setLoading(false);
@@ -42,9 +44,9 @@ const useHook = (ref:string) => {
     return {
         isLoading,
         items,
-        getProducts,
+        getItems,
         itemDetail,
-        getProductDetail,
+        getItemDetail,
         error,
     };
 };

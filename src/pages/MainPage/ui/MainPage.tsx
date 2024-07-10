@@ -1,3 +1,4 @@
+import useHook from "shared/hooks/useHook"
 import AdvantagesBlock from "../../../components/advantagesBlock/AdvantagesBlock"
 import CallBackForm from "../../../components/CallBackForm/CallBackForm"
 import CatalogBlock from "../../../components/CatalogBlock/CatalogBlock"
@@ -7,20 +8,27 @@ import MainBanner from "../../../components/MainBanner/MainBanner"
 import NewsBlock from "../../../components/NewsBlock/NewsBlock"
 import PoductBlock from "../../../components/ProductBlock/ProductBlock"
 import YoutubeBlock from "../../../components/YoutubeBlock/YoutubeBlock"
+import { useEffect } from "react"
 
 const MainPage = () => {
+    const { getItems: getNews, items: news } = useHook("news");
+
+    useEffect(() => {
+        getNews()
+    }, [])
+    
     return (
-        <div>
-             <MainBanner />
-          <CatalogBlock />
-          <PoductBlock />
-          <YoutubeBlock></YoutubeBlock>
-          <AdvantagesBlock></AdvantagesBlock>
-          <CallBackForm />
-          <NewsBlock />
-          <FeedbackSlider />
-          <FaqBlock />
-        </div>
+        <>
+            <MainBanner />
+            <CatalogBlock />
+            <PoductBlock />
+            <YoutubeBlock />
+            <AdvantagesBlock />
+            <CallBackForm />
+            <NewsBlock news={news} />
+            <FeedbackSlider />
+            <FaqBlock />
+        </>
     )
 }
 

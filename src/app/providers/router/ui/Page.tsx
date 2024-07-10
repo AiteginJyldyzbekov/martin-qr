@@ -12,7 +12,7 @@ export interface PageProps {
 
 const Page: React.FC<PageProps> = ({ routes }) => {
     return (
-        <Suspense fallback={<Preloader />}>
+        <Suspense fallback={<Preloader full />}>
             <Routes>
                 {Object.values(routes).map(({ element, path }) => (
                     <Route
