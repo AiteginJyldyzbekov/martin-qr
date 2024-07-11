@@ -1,7 +1,7 @@
 import useHook from "shared/hooks/useHook";
 import CatalogDetailItem from "../CatalogDetailItem/CatalogDetailItem";
 import styles from "./CatalogDetailBlock.module.scss"
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Key, useEffect } from "react";
 import Preloader from "shared/ui/Preloader/Preloader";
 
@@ -11,14 +11,14 @@ const titles: { [key: string]: string } = {
     blazer: 'Жакеты',
     trench: 'Тренчи',
     costume: 'Костюмы'
-  };
-  
-  interface CatalogDetailBlockProps {
-    items: any; 
+};
+
+interface CatalogDetailBlockProps {
+    items: any;
     title: keyof typeof titles;
-  }
-  
-  const CatalogDetailBlock: React.FC<CatalogDetailBlockProps> = ({ items, title }) => {
+}
+
+const CatalogDetailBlock: React.FC<CatalogDetailBlockProps> = ({ items, title }) => {
     return (
         <div className={styles.jacketList + " container"}>
             <h1>{titles[title]}</h1>
