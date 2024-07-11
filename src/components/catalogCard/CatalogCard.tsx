@@ -9,8 +9,7 @@ interface CatalogCardProps {
 }
 
 const CatalogCard: React.FC<CatalogCardProps> = ({ name, path, img }) => {
-  console.log(img);
-  
+
   return (
     <div className={scss.card_w} style={{backgroundImage: `url(${img})`}}>
       <p>{name}</p>

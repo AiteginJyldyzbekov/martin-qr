@@ -13,14 +13,14 @@ import {
 import { useCallback, useState } from "react";
 import { db } from "../config/firebase/firebase";
 
-const useHook = (ref:string) => {
+const useHook = (ref: string) => {
     const [error, setError] = useState("");
     const [items, setItems] = useState([]);
     const [itemDetail, setItemDetail] = useState(null);
     const [isLoading, setLoading] = useState(true);
-    
+
     const getItems = useCallback(async () => {
-        const arr:any = [];
+        const arr: any = [];
         const q = query(collection(db, ref), orderBy("createdAt", "desc"));
         const data = await getDocs(q);
         data.forEach((doc) => {
@@ -30,15 +30,14 @@ const useHook = (ref:string) => {
         setLoading(false);
     }, [ref]);
 
-    const getItemsWhere = useCallback(async (category:string) => {
-        const arr:any = [];
+    const getItemsWhere = useCallback(async (category: string) => {
+        const arr: any = [];
         const q = query(collection(db, ref), orderBy("createdAt", "desc"), where("category", "==", category));
         const data = await getDocs(q);
         data.forEach((doc) => {
             arr.push({ tid: doc.id, ...doc.data() });
         });
         setItems(arr);
-        console.log(arr)
         setLoading(false);
     }, [ref]);
 
