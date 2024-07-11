@@ -8,7 +8,7 @@ interface CatalogDetailItemProps {
 const CatalogDetailItem: React.FC<CatalogDetailItemProps> = ({ catalogItem }) => {
     return (
         <div className={styles.jacketItem}>
-            <img src={catalogItem.images[0].url} alt={catalogItem.title} />
+            <img src={catalogItem.images[0]?.url} alt={catalogItem.title} />
             <p className={styles.name}>{catalogItem.title}</p>
             <p className={styles.price}>{catalogItem.price} сом</p>
             <div className={styles.colors}>
