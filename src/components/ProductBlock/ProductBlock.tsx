@@ -17,22 +17,22 @@ interface Card {
 const cards: Card[] = [
   {
     name: "Жакеты",
-    path: "/jakety",
+    path: "/finished-product/blazer",
     img: c1,
   },
   {
     name: "Костюмы",
-    path: "/kostumy",
+    path: "/finished-product/costume",
     img: c2,
   },
   {
     name: "Куртки",
-    path: "/kurtki",
+    path: "/finished-product/jacket",
     img: c3,
   },
   {
     name: "Тренчи",
-    path: "/trenchi",
+    path: "/finished-product/trench",
     img: c1,
   },
 ];

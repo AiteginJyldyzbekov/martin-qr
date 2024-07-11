@@ -35,17 +35,17 @@ const sliderSettings = {
   className: "custom-slider-class",
 };
 
-function FeedbackSlider() {
+const FeedbackSlider = ({ feedbacks }: { feedbacks: any }) => {
   return (
     <div className={scss.feedback_back}>
       <div className={`${scss.feedback_slider_w} container`}>
         <h2>Отзывы клиентов</h2>
         <div className={scss.feedback_card_w}>
           <Slider {...sliderSettings}>
-            {reviewCards.map((review, index) => (
+            {feedbacks?.map((review: any, index: number) => (
               <ReviewCard
                 key={index}
-                img={review.img}
+                img={review.images[0].url}
                 name={review.name}
                 desc={review.desc}
                 stars={review.stars}

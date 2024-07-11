@@ -13,11 +13,13 @@ import ImageR from "shared/images/back_g.png"
 
 const MainPage = () => {
     const { getItems: getNews, items: news } = useHook("news");
+    const { getItems: getFeedback, items: feedbacks } = useHook("feedback")
 
     useEffect(() => {
         getNews()
+        getFeedback()
     }, [])
-    
+
     return (
         <>
             <MainBanner />
@@ -27,7 +29,7 @@ const MainPage = () => {
             <AdvantagesBlock />
             <CallBackForm backgroundImage={ImageR} />
             <NewsBlock news={news} />
-            <FeedbackSlider />
+            <FeedbackSlider feedbacks={feedbacks} />
             <FaqBlock />
         </>
     )

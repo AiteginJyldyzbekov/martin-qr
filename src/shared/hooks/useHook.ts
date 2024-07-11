@@ -8,6 +8,7 @@ import {
     query,
     Timestamp,
     updateDoc,
+    where,
 } from "firebase/firestore";
 import { useCallback, useState } from "react";
 import { db } from "../config/firebase/firebase";
@@ -29,6 +30,18 @@ const useHook = (ref:string) => {
         setLoading(false);
     }, [ref]);
 
+    const getItemsWhere = useCallback(async (category:string) => {
+        const arr:any = [];
+        const q = query(collection(db, ref), orderBy("createdAt", "desc"), where("category", "==", category));
+        const data = await getDocs(q);
+        data.forEach((doc) => {
+            arr.push({ tid: doc.id, ...doc.data() });
+        });
+        setItems(arr);
+        console.log(arr)
+        setLoading(false);
+    }, [ref]);
+
     const getItemDetail = async (id: string) => {
         const docRef = doc(db, ref, id);
         const res = await getDoc(docRef);
@@ -47,6 +60,7 @@ const useHook = (ref:string) => {
         getItems,
         itemDetail,
         getItemDetail,
+        getItemsWhere,
         error,
     };
 };

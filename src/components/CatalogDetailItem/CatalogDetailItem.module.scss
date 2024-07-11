@@ -1,0 +1,38 @@
+.jacketItem {
+    width: 100%;
+    text-align: center;
+
+    img {
+        width: 100%;
+        height: 471.48px;
+        border-radius: 3px;
+        object-fit: cover;
+    }
+
+    .name {
+        margin-top: 29px;
+        font-size: 17px;
+        font-weight: 700;
+        line-height: 23px;
+        text-transform: uppercase;
+        color: #000000;
+    }
+
+    .price {
+        margin-top: 14px;
+        color: #706D6E;
+    }
+
+    .colors {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+
+        span {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+    }
+}

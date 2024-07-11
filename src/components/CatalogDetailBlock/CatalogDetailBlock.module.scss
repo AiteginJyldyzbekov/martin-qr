@@ -1,0 +1,34 @@
+.jacketList {
+    text-align: center;
+    margin-bottom: 100px;
+
+    h1 {
+        margin-bottom: 20px;
+    }
+}
+
+.jackets {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+
+    @media (min-width: 1024px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.select__container {
+    margin-bottom: 58px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+
+    select {
+        width: 226px;
+        height: 60px;
+        padding: 22px 24.5px 21px 4px;
+        border: none;
+        border-bottom: 1px solid #DBDBDB
+    }
+}
