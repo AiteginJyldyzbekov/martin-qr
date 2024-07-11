@@ -8,7 +8,7 @@ import Preloader from "shared/ui/Preloader/Preloader";
 const titles: { [key: string]: string } = {
     jacket: 'Куртки',
     coat: 'Пальто',
-    blazer: 'Пиджаки',
+    blazer: 'Жакеты',
     trench: 'Тренчи',
     costume: 'Костюмы'
   };
