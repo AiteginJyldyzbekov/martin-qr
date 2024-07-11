@@ -45,7 +45,7 @@ const FeedbackSlider = ({ feedbacks }: { feedbacks: any }) => {
             {feedbacks?.map((review: any, index: number) => (
               <ReviewCard
                 key={index}
-                img={review.images[0].url}
+                img={review.images[0]?.url}
                 name={review.name}
                 desc={review.desc}
                 stars={review.stars}
