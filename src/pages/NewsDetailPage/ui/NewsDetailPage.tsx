@@ -22,7 +22,7 @@ const NewsDetailPage = () => {
             <p className={styles.main__title}>Новости и акции</p>
             <p className={styles.news__title}>{itemDetail?.title}</p>
             <p className={styles.date}>{formatDate(itemDetail?.date)}</p>
-            <img src={itemDetail?.images[0].url} />
+            <img src={itemDetail?.images[0]?.url} />
             <div className={styles.text__container}>
                 <p className={styles.desc1}>{itemDetail?.desc1}</p>
                 <p className={styles.desc2}>{itemDetail?.desc2}</p>

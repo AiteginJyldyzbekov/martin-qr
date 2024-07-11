@@ -43,7 +43,7 @@ const NewsBlock: React.FC<NewsBlockProps> = ({ isNewsPage, news = [], isLoading 
     displayedNews.map((el, index) => (
       <NewsCard
         key={index}
-        img={el.images[0].url}
+        img={el.images[0]?.url}
         date={el.date}
         title={el.title}
         desc={el.desc1}

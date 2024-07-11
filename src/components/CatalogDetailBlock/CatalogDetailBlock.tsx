@@ -35,7 +35,7 @@ const titles: { [key: string]: string } = {
             </div>
             <div className={styles.jackets}>
                 {items?.map((jacket: { id: Key; }) => (
-                    <CatalogDetailItem key={jacket.id} catalogItem={jacket} />
+                    <CatalogDetailItem key={jacket.id} tid={items.tid} catalogItem={jacket} />
                 ))}
             </div>
         </div>
