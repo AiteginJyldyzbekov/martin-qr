@@ -23,7 +23,7 @@ const ProductsPage = () => {
     if (isLoading) return <Preloader />
     return (
         <>
-            <CatalogDetailBlock items={items} />
+            <CatalogDetailBlock items={items} title={productName} />
             <CallBackForm backgroundImage={ImageR} />
             <NewsBlock news={news} />
         </>

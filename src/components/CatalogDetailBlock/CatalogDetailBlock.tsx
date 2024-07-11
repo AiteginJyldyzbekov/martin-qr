@@ -5,10 +5,23 @@ import { useParams } from "react-router-dom";
 import { Key, useEffect } from "react";
 import Preloader from "shared/ui/Preloader/Preloader";
 
-const CatalogDetailBlock = ({ items}: any) => {
+const titles: { [key: string]: string } = {
+    jacket: 'Куртки',
+    coat: 'Пальто',
+    blazer: 'Пиджаки',
+    trench: 'Тренчи',
+    costume: 'Костюмы'
+  };
+  
+  interface CatalogDetailBlockProps {
+    items: any; 
+    title: keyof typeof titles;
+  }
+  
+  const CatalogDetailBlock: React.FC<CatalogDetailBlockProps> = ({ items, title }) => {
     return (
         <div className={styles.jacketList + " container"}>
-            <h1>Жакеты</h1>
+            <h1>{titles[title]}</h1>
             <div className={styles.select__container}>
                 <select>
                     <option>Размер</option>
