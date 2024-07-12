@@ -1,52 +1,61 @@
-.backheader{
+.backheader {
   background-color: #F9F9F9;
-  
+
 }
+
 .top_header {
   display: flex;
   justify-content: space-between;
   height: 10vh;
   color: #000000;
+
   .left_top__header {
     display: flex;
     justify-content: space-between;
     gap: 20px;
     align-items: center;
   }
+
   .right_top__header {
     display: flex;
     gap: 20px;
     align-items: center;
   }
 }
+
 .bottom_header {
   height: 15vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   .catalog_b {
-    button{
-        display: flex;
-    gap: 10px;
-    align-items: center;
-    background-color: transparent;
-    border: 0;
-    outline: 0;
-    svg {
-      width: 28px;
-    }
-    p {
-      font-size: 16px;
-      font-weight: 700;
-    }
+    button {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      background-color: transparent;
+      border: 0;
+      outline: 0;
+
+      svg {
+        width: 28px;
+      }
+
+      p {
+        font-size: 16px;
+        font-weight: 700;
+      }
     }
   }
-  > div {
+
+  >div {
     display: flex;
     align-items: center;
   }
+
   .search_b {
-    button {
+    input {
       border: 0;
       outline: 0;
       cursor: pointer;
