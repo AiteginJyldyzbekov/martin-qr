@@ -4,6 +4,7 @@
 
 .backheader {
   background-color: #F9F9F9;
+
 }
 
 .top_header {
@@ -17,11 +18,11 @@
     justify-content: space-between;
     gap: 20px;
     align-items: center;
-    .logo_b{
-      display: none;
-    }
+    
   }
-
+  .logo_b{
+    display: none;
+  }
   .right_top__header {
     display: flex;
     gap: 20px;
@@ -56,13 +57,14 @@
     }
   }
 
+
   > div {
     display: flex;
     align-items: center;
   }
 
   .search_b {
-    button {
+    input {
       border: 0;
       outline: 0;
       cursor: pointer;
@@ -87,17 +89,16 @@
       a{
         display: none;
       }
-      .logo_b{
-        display: block;
-        svg{
-          width: 100px !important;
-        }
-      }
       .burgermenu{
         display: block;
       }
     }
-
+    .logo_b{
+      display: block;
+      img{
+        width: 100%;
+      }
+    }
     .right_top__header {
       .number{
         display: none;

@@ -5,6 +5,7 @@ import { type RouteProps } from 'react-router-dom'
 import { ProductsPage } from 'pages/ProductsPage'
 import { NewsDetailPage } from 'pages/NewsDetailPage'
 import { NewsPage } from 'pages/NewsPage'
+import CatalogDetailPage from 'pages/ProductPage/ui/CatalogDetailPage'
 
 export enum UserRoutes {
   MAIN = 'main',
@@ -37,7 +38,7 @@ export const UserRouteConfig: Record<UserRoutes, RouteProps> = {
   },
   [UserRoutes.CATALOG_DETAIL]: {
     path: UserRoutePath.catalog_detail,
-    element: <ProductPage />
+    element: <CatalogDetailPage />
   },
   [UserRoutes.PRODUCT]: {
     path: UserRoutePath.product,

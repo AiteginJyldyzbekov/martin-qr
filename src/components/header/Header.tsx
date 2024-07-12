@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import scss from "./Header.module.scss";
 import Wh from "../../../public/images/wh.svg";
 import Burger_menu from "../../../public/images/burger_menu.svg";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import Logo from "../../../public/images/logo.svg";
 
-function Header() {
+const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleOpenModal = () => {
@@ -14,6 +16,18 @@ function Header() {
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
+
+  const navigate = useNavigate();
+  const [searchValue, setSearchValue] = useState();
+  const updateSearchValue = (value: string) => {
+    navigate(`?search=${encodeURIComponent(value)}`);
+  };
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const searchParam: any = params.get("search") || "";
+    setSearchValue(searchParam);
+  }, [location.search]);
 
   return (
     <>
@@ -34,13 +48,15 @@ function Header() {
               </button>
             </div>
             <div className={scss.logo_b}>
-            <Logo />
-          </div>
+              <img src="/images/logo.svg" alt="logo" />
+            </div>
             <div className={scss.right_top__header}>
               <a href="">
                 <Wh />
               </a>
-              <a href="" className={scss.number}>+996 551 99 51 59</a>
+              <a href="" className={scss.number}>
+                +996 551 99 51 59
+              </a>
             </div>
           </div>
         </div>
@@ -55,7 +71,12 @@ function Header() {
             <Logo />
           </div>
           <div className={scss.search_b}>
-            <button onClick={handleOpenModal}>Поиск по каталогу</button>
+            <input
+              type="text"
+              onChange={(e) => updateSearchValue(e.target.value)}
+              value={searchValue}
+              placeholder="Поиск по каталогу"
+            />
           </div>
         </div>
       </header>
@@ -71,6 +92,5 @@ function Header() {
       )}
     </>
   );
-}
-
+};
 export default Header;
