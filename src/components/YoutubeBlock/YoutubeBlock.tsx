@@ -1,10 +1,38 @@
-
+import { useState, useEffect } from 'react';
 import scss from "./YoutubeBlock.module.scss";
+import 'animate.css';
 
 function YoutubeBlock() {
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const element = document.getElementById('youtubeBlock');
+      if (element) {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementBottom = element.getBoundingClientRect().bottom;
+
+        if (!hasAnimated && elementTop < window.innerHeight && elementBottom >= 0) {
+          setHasAnimated(true);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Проверяем видимость при загрузке компонента
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [hasAnimated]);
+
   return (
-    <div className={scss.y_back_w}>
-      <div className={scss.y_g_w + " " + "container"}>
+    <div
+      id="youtubeBlock"
+      className={`${scss.y_back_w} ${hasAnimated ? 'animate__animated animate__backInRight' : ''}`}
+      style={{ animationDuration: '2s' }}
+    >
+      <div className={`${scss.y_g_w} container`}>
         <div>
           <iframe
             width="100%"

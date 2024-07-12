@@ -29,7 +29,7 @@ function MainBanner() {
 
   return (
     <div
-      className={`${scss.banner_w} container`}
+      className={`${scss.banner_w} container animate__animated animate__backInDown`}
       style={{ backgroundImage: `url(${currentImage?.url})` }}
     >
       <div className={scss.banner_block}>

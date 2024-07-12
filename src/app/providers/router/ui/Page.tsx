@@ -5,6 +5,7 @@ import { Suspense } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { type RouteConfigType } from 'shared/routeConfig/types'
 import Preloader from 'shared/ui/Preloader/Preloader'
+import 'animate.css';
 
 export interface PageProps {
     routes: RouteConfigType

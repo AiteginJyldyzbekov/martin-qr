@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-
+.footer_back{
+    background-color: #F2F2F2;
+}
 .footer_top{
     display: flex;
     height: 120px;
@@ -25,7 +27,7 @@
     grid-template-areas: 
     "ber bet . bey"
     ;
-    margin-bottom: 60px;
+    padding-bottom: 60px;
     .ber{
         grid-area: ber;
         display: flex;
