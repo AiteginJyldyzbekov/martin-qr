@@ -44,6 +44,22 @@ const sliderSettings = {
   nextArrow: <NextArrow />,
   prevArrow: <PrevArrow />,
   className: 'custom-slider-class',
+  responsive: [
+    {
+      breakpoint: 768, // настройки для экранов меньше чем 768px
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 568, // настройки для экранов меньше чем 568px
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
 };
 
 const LikedBlock: React.FC = () => {

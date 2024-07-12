@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import scss from './MainBanner.module.scss';
 
 const backgroundImages = [
-  {
+{
     url: "https://media.licdn.com/dms/image/D4D12AQGPCed4zlkFCA/article-cover_image-shrink_720_1280/0/1678631732312?e=2147483647&v=beta&t=XHMwdbaB1omlDGgJI-QMewqeFmDmYpDEk4AcC1-mu8c",
     title: "Title 1",
     desc: "Desc"

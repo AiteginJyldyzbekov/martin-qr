@@ -1,57 +1,81 @@
-
-import React from "react";
-import scss from "./ProductBlock.module.scss";
-import c1 from "../../../public/images/c1.png";
-import c2 from "../../../public/images/c2.png";
-import c3 from "../../../public/images/c3.png";
-import info from "../../../public/images/info.png";
-import CatalogCard from "../catalogCard/CatalogCard";
-
+import React from 'react';
+import scss from './ProductBlock.module.scss';
+import CatalogCard from '../catalogCard/CatalogCard';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import { NextArrow, PrevArrow } from '../CustomArrows/CustomArrow'; // замените на ваш путь к компонентам
 
 interface Card {
   name: string;
   path: string;
-  img: any;
+  img: string;
 }
 
 const cards: Card[] = [
   {
-    name: "Жакеты",
-    path: "/finished-product/blazer",
-    img: c1,
+    name: 'Жакеты',
+    path: '/jakety',
+    img: '/images/c1.png',
   },
   {
-    name: "Костюмы",
-    path: "/finished-product/costume",
-    img: c2,
+    name: 'Костюмы',
+    path: '/kostumy',
+    img: '/images/c2.png',
   },
   {
-    name: "Куртки",
-    path: "/finished-product/jacket",
-    img: c3,
+    name: 'Куртки',
+    path: '/kurtki',
+    img: '/images/c3.png',
   },
   {
-    name: "Тренчи",
-    path: "/finished-product/trench",
-    img: c1,
+    name: 'Тренчи',
+    path: '/trenchi',
+    img: '/images/c1.png',
   },
 ];
 
-const PoductBlock: React.FC = () => {
- 
+const sliderSettings = {
+  dots: false,
+  infinite: true,
+  speed: 300,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  nextArrow: <NextArrow />,
+  prevArrow: <PrevArrow />,
+  className: 'custom-slider-class',
+  responsive: [
+    {
+      breakpoint: 768, // настройки для экранов меньше чем 768px
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 568, // настройки для экранов меньше чем 568px
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
+};
 
+const ProductBlock: React.FC = () => {
   return (
-    <div className="container">
+    <div className={scss.prod_w + " container"}>
       <h2 className="title_g">Готовая продукция</h2>
-      
-          <div  className={scss.c_card_wrapper}>
-            {cards.map((el, index) => (
-              <CatalogCard key={index} name={el.name} path={el.path} img={el.img} />
-            ))}
-          </div>
-          <img src={info} style={{width: "100%",padding: "30px 0"}} alt="info" />
+
+      <div className={scss.c_card_wrapper}>
+        <Slider {...sliderSettings}>
+          {cards.map((el, index) => (
+            <CatalogCard key={index} name={el.name} path={el.path} img={el.img} />
+          ))}
+        </Slider>
+      </div>
     </div>
   );
 };
 
-export default PoductBlock;
+export default ProductBlock;

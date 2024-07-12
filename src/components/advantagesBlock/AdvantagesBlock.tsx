@@ -5,7 +5,7 @@ function AdvantagesBlock() {
   return (
     <div className={`${scss.advantage_w} container`}>
       <div className={scss.b_b}><p>5</p></div>
-      <div className={scss.b_r}><p>Причин <br /> с нами работать</p></div>
+      <div className={scss.b_r}><p>Причин с нами работать</p></div>
       <div className={scss.b_t}>
         <p className={scss.title}>Уникальные разработки.</p>
         <p className={scss.description}>

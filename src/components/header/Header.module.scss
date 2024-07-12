@@ -138,8 +138,42 @@
 
 .modal_content {
   background: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  width: 80%;
+  width: 100%;
   max-width: 500px;
+  height: 100vh;
+  transition: ease-in-out;
+}
+.m_bottom_header a{
+  display: block;
+  padding: 15px 0;
+  transition: ease-in-out .3s;
+  &:hover{
+  padding: 20px 0;
+  color: gray;
+  }
+}
+
+.m_bottom_header{
+  .number{
+    color: black;
+    font-weight: 700;
+    font-size: 30;
+  }
+  .search_b{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    p{
+      color: gray;
+      font-size: 30px;
+    }
+    input{
+      border: 0;
+      border-bottom: 1px solid gray;
+      padding: 15px 0;
+      width: 100%;
+      outline: 0;
+    }
+  }
 }

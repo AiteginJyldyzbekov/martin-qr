@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import scss from "./FaqBlock.module.scss";
-import Arrow from "../../../public/images/arrow.svg";
 
 interface FaqItem {
   question: string;
@@ -53,7 +52,7 @@ const FaqBlock: React.FC = () => {
                 {item.question}
               </div>
               <div className={scss.right}>
-                <Arrow />
+                <img src="/images/arrow.svg" alt="" />
               </div>
             </div>
             <div className={scss.bottom}>
