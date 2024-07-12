@@ -1,9 +1,9 @@
 .banner_w{
     height: 80vh;
-    background-image: url("../../../public/images/m_banner.png");
     background-size: cover;
     background-position: center;
     padding: 100px;
+    transition:  1s ease-in-out;
     .banner_block{
         width: 40%;
         display: flex;

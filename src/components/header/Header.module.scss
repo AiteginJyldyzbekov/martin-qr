@@ -1,3 +1,7 @@
+.header {
+  /* Основные стили для header */
+}
+
 .backheader {
   background-color: #F9F9F9;
 
@@ -14,8 +18,11 @@
     justify-content: space-between;
     gap: 20px;
     align-items: center;
+    
   }
-
+  .logo_b{
+    display: none;
+  }
   .right_top__header {
     display: flex;
     gap: 20px;
@@ -37,6 +44,7 @@
       background-color: transparent;
       border: 0;
       outline: 0;
+      cursor: pointer;
 
       svg {
         width: 28px;
@@ -49,7 +57,8 @@
     }
   }
 
-  >div {
+
+  > div {
     display: flex;
     align-items: center;
   }
@@ -63,4 +72,74 @@
       background-color: transparent;
     }
   }
+}
+
+.burgermenu{
+  border: 0;
+  background-color: transparent;
+  display: none;
+}
+/* Адаптивные стили */
+@media (max-width: 768px) {
+  .top_header {
+    align-items: center;
+    .left_top__header {
+      flex-direction: column;
+      gap: 10px;
+      a{
+        display: none;
+      }
+      .burgermenu{
+        display: block;
+      }
+    }
+    .logo_b{
+      display: block;
+      img{
+        width: 100%;
+      }
+    }
+    .right_top__header {
+      .number{
+        display: none;
+      }
+    }
+  }
+
+  .bottom_header {
+    display: none;
+
+    .catalog_b,
+    .logo_b,
+    .search_b {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .catalog_b button {
+      justify-content: flex-start;
+    }
+  }
+}
+
+/* Стили для модального окна */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal_content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  width: 80%;
+  max-width: 500px;
 }
