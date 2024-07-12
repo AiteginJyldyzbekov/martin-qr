@@ -4,12 +4,13 @@ import Wh from "../../../public/images/wh.svg";
 import Burger_menu from "../../../public/images/burger_menu.svg";
 import Close from "../../../public/images/close.svg";
 import { Link, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import Logo from "../../../public/images/logo.svg";
 
 const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
+  const { catalogName, productName } = useParams()
   const handleOpenModal = () => {
     setIsModalOpen(true);
   };
@@ -40,6 +41,14 @@ const Header = () => {
     }
   }, [isModalOpen]);
 
+
+  const handleSearch = (e:any) => {
+    if(catalogName || productName){
+      updateSearchValue(e.target.value)
+    }else{
+      navigate("catalog/blazer")
+    }
+  }
 
   return (
     <>
@@ -85,7 +94,7 @@ const Header = () => {
           <div className={scss.search_b}>
             <input
               type="text"
-              onChange={(e) => updateSearchValue(e.target.value)}
+              onChange={(e) => handleSearch(e)}
               value={searchValue}
               placeholder="Поиск по каталогу"
             />
