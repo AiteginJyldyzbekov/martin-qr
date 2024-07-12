@@ -33,6 +33,22 @@ const sliderSettings = {
   slidesToShow: 3,
   slidesToScroll: 1,
   className: "custom-slider-class",
+  responsive: [
+    {
+      breakpoint: 768, // настройки для экранов меньше чем 768px
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 568, // настройки для экранов меньше чем 568px
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
 };
 
 const FeedbackSlider = ({ feedbacks }: { feedbacks: any }) => {

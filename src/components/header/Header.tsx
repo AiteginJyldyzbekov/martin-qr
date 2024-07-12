@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import scss from "./Header.module.scss";
 import Wh from "../../../public/images/wh.svg";
 import Burger_menu from "../../../public/images/burger_menu.svg";
-import { useNavigate } from "react-router-dom";
+import Close from "../../../public/images/close.svg";
+import { Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import Logo from "../../../public/images/logo.svg";
 
@@ -28,6 +29,17 @@ const Header = () => {
     const searchParam: any = params.get("search") || "";
     setSearchValue(searchParam);
   }, [location.search]);
+  
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.height = '100vh';
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.height = '';
+      document.body.style.overflow = '';
+    }
+  }, [isModalOpen]);
+
 
   return (
     <>
@@ -43,12 +55,12 @@ const Header = () => {
               <a href="">Для клиентов</a>
               <a href="">Отзывы</a>
               <a href="">Новости</a>
-              <button className={scss.burgermenu}>
+              <button onClick={handleOpenModal} className={scss.burgermenu}>
                 <Burger_menu />
               </button>
             </div>
             <div className={scss.logo_b}>
-              <img src="/images/logo.svg" alt="logo" />
+              <Link to="/"><img src="/images/logo.svg" alt="logo" /></Link>
             </div>
             <div className={scss.right_top__header}>
               <a href="">
@@ -84,9 +96,47 @@ const Header = () => {
       {isModalOpen && (
         <div className={scss.modal}>
           <div className={scss.modal_content}>
-            <h2>Поиск по каталогу</h2>
-            <input type="text" placeholder="Введите поисковый запрос" />
-            <button onClick={handleCloseModal}>Закрыть</button>
+          <div className={scss.top_header + " container"}>
+            <div className={scss.left_top__header}>
+              
+              <button onClick={handleCloseModal} className={scss.burgermenu}>
+                <Close />
+              </button>
+            </div>
+            <div className={scss.logo_b}>
+              <Link to="/"><img src="/images/logo.svg" alt="logo" /></Link>
+            </div>
+            <div className={scss.right_top__header}>
+              <a href="">
+                <Wh />
+              </a>
+              <a href="" className={scss.number}>
+                +996 551 99 51 59
+              </a>
+            </div>
+          </div>
+          <div className={scss.m_bottom_header + " container"}>
+          <Link to="#">Главная</Link>
+              <Link to="#">О компании</Link>
+              <Link to="#">Каталог</Link>
+              <Link to="#">Советы</Link>
+              <Link to="#">Доставка и оплата</Link>
+              <Link to="#">Для клиентов</Link>
+              <Link to="#">Отзывы</Link>
+              <Link to="#">Новости</Link>
+              <a href="tel:+996551995159" className={scss.number}>
+                +996 551 99 51 59
+              </a>
+              <div className={scss.search_b}>
+                <p>Посик по каталогу</p>
+            <input
+              type="text"
+              onChange={(e) => updateSearchValue(e.target.value)}
+              value={searchValue}
+              placeholder="Поиск по каталогу"
+            />
+          </div>
+          </div>
           </div>
         </div>
       )}

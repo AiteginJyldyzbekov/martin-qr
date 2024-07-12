@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import scss from './MainBanner.module.scss';
 
 const backgroundImages = [
-  { url: "https://media.licdn.com/dms/image/D4D12AQGPCed4zlkFCA/article-cover_image-shrink_720_1280/0/1678631732312?e=2147483647&v=beta&t=XHMwdbaB1omlDGgJI-QMewqeFmDmYpDEk4AcC1-mu8c" },
-  { url: "https://cache.cosmopolitan.fr/data/photo/w1000_ci/6d/fashion-week-infos.jpg" },
-  { url: "https://footwearnews.com/wp-content/uploads/2022/07/GettyImages-1407379141.jpg?w=700&h=437&crop=1" }
+  { url: "https://kartinki.pics/uploads/posts/2022-12/thumbs/1669931130_56-kartinkin-net-p-belii-fon-oboi-vkontakte-60.jpg" },
+  { url: "https://img.freepik.com/free-photo/brown-gradient-background_53876-104923.jpg" },
+  { url: "https://kartinki.pics/uploads/posts/2022-12/1670057221_1-kartinkin-net-p-prosto-rozovii-fon-oboi-1.png" }
 ];
 
 function MainBanner() {

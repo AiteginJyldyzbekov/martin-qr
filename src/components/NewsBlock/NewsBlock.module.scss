@@ -26,3 +26,12 @@
         border-radius: 3px 0px 0px 0px;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .news_card_w {
+        grid-template-columns: 1fr;
+    }
+    button {
+        width: 100% !important;
+    }
+}

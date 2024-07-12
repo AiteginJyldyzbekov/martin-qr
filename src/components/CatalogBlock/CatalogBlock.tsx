@@ -46,6 +46,7 @@ const CatalogBlock: React.FC = () => {
     const rowCards = cards.slice(i, i + 3);
     rows.push(rowCards);
   }
+  
 
   return (
     <div className="container">

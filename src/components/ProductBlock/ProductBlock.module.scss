@@ -1,5 +1,45 @@
-.c_card_wrapper {
-    display: grid;
-    gap: 30px;
-    grid-template-columns: repeat(4, 1fr);
+
+.feedback_back{
+  background-color: #D8C1AE;
+  padding: 90px 0;
+  margin: 80px 0;
+  h2{
+      padding-bottom: 30px;
+      text-align: center;
+      color:  white;
   }
+  .feedback_card_w{
+      display: flex;
+      width: 100%;
+  }
+  
+}
+.prod_w{
+  padding-bottom: 30px;
+}
+.custom-slider-class {
+  .slick-prev,
+  .slick-next {
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5); // или ваш цвет
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slick-prev:hover,
+  .slick-next:hover {
+    background-color: rgba(0, 0, 0, 0.8); // или ваш цвет
+  }
+
+  .slick-prev {
+    left: -0px; // измените значение, если нужно
+  }
+
+  .slick-next {
+    right: -60px; // измените значение, если нужно
+  }
+}
