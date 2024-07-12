@@ -2,12 +2,7 @@ import React, { useState, useEffect } from 'react';
 import scss from './MainBanner.module.scss';
 
 const backgroundImages = [
-<<<<<<< HEAD
-  { url: "https://kartinki.pics/uploads/posts/2022-12/thumbs/1669931130_56-kartinkin-net-p-belii-fon-oboi-vkontakte-60.jpg" },
-  { url: "https://img.freepik.com/free-photo/brown-gradient-background_53876-104923.jpg" },
-  { url: "https://kartinki.pics/uploads/posts/2022-12/1670057221_1-kartinkin-net-p-prosto-rozovii-fon-oboi-1.png" }
-=======
-  {
+{
     url: "https://media.licdn.com/dms/image/D4D12AQGPCed4zlkFCA/article-cover_image-shrink_720_1280/0/1678631732312?e=2147483647&v=beta&t=XHMwdbaB1omlDGgJI-QMewqeFmDmYpDEk4AcC1-mu8c",
     title: "Title 1",
     desc: "Desc"
@@ -22,7 +17,6 @@ const backgroundImages = [
     title: "Title 3",
     desc: "Desc3"
   }
->>>>>>> 772df42050633b2300896f087c8f2c6029682372
 ];
 
 function MainBanner() {
