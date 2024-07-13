@@ -1,10 +1,11 @@
 import scss from "./CallBackForm.module.scss"
+import imager from "../../../public/images/back_g.png"
 
-function CallBackForm({ backgroundImage }: { backgroundImage?: any }) {
+function CallBackForm() {
   return (
     <div
       className={`${scss.callB_w} container`}
-      style={{ backgroundImage: `url(${backgroundImage})` }}
+      style={{ backgroundImage: `url(${imager})` }}
     >
       <div className={scss.des_tit}>
         <p className={scss.title}>

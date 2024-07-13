@@ -23,7 +23,7 @@ const CatalogPage = () => {
     return (
         <>
             <CatalogDetailBlock items={items} title={catalogName} collectionName="catalog" />
-            <CallBackForm backgroundImage={"/images/back_g.png"} />
+            <CallBackForm />
             <NewsBlock news={news} />
         </>
     )
