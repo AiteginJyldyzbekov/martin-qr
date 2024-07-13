@@ -30,7 +30,7 @@ const Header = () => {
     const searchParam: any = params.get("search") || "";
     setSearchValue(searchParam);
   }, [location.search]);
-  
+
   useEffect(() => {
     if (isModalOpen) {
       document.body.style.height = '100vh';
@@ -42,10 +42,10 @@ const Header = () => {
   }, [isModalOpen]);
 
 
-  const handleSearch = (e:any) => {
-    if(catalogName || productName){
+  const handleSearch = (e: any) => {
+    if (catalogName || productName) {
       updateSearchValue(e.target.value)
-    }else{
+    } else {
       navigate("catalog/blazer")
     }
   }
@@ -69,7 +69,7 @@ const Header = () => {
               </button>
             </div>
             <div className={scss.logo_b}>
-              <Link to="/"><img src="/images/logo.svg" alt="logo" /></Link>
+              <Link to="/"><img src="https://firebasestorage.googleapis.com/v0/b/fashion-admin-3dbe1.appspot.com/o/logo%2Flogo.svg?alt=media&token=68e230ff-ee60-4e7c-8256-3641989a5fd2" alt="logo" /></Link>
             </div>
             <div className={scss.right_top__header}>
               <a href="">
@@ -105,27 +105,27 @@ const Header = () => {
       {isModalOpen && (
         <div className={scss.modal}>
           <div className={scss.modal_content}>
-          <div className={scss.top_header + " container"}>
-            <div className={scss.left_top__header}>
-              
-              <button onClick={handleCloseModal} className={scss.burgermenu}>
-                <Close />
-              </button>
+            <div className={scss.top_header + " container"}>
+              <div className={scss.left_top__header}>
+
+                <button onClick={handleCloseModal} className={scss.burgermenu}>
+                  <Close />
+                </button>
+              </div>
+              <div className={scss.logo_b}>
+                <Link to="/"><img src="/images/logo.svg" alt="logo" /></Link>
+              </div>
+              <div className={scss.right_top__header}>
+                <a href="">
+                  <Wh />
+                </a>
+                <a href="" className={scss.number}>
+                  +996 551 99 51 59
+                </a>
+              </div>
             </div>
-            <div className={scss.logo_b}>
-              <Link to="/"><img src="/images/logo.svg" alt="logo" /></Link>
-            </div>
-            <div className={scss.right_top__header}>
-              <a href="">
-                <Wh />
-              </a>
-              <a href="" className={scss.number}>
-                +996 551 99 51 59
-              </a>
-            </div>
-          </div>
-          <div className={scss.m_bottom_header + " container"}>
-          <Link to="#">Главная</Link>
+            <div className={scss.m_bottom_header + " container"}>
+              <Link to="#">Главная</Link>
               <Link to="#">О компании</Link>
               <Link to="#">Каталог</Link>
               <Link to="#">Советы</Link>
@@ -138,14 +138,14 @@ const Header = () => {
               </a>
               <div className={scss.search_b}>
                 <p>Посик по каталогу</p>
-            <input
-              type="text"
-              onChange={(e) => updateSearchValue(e.target.value)}
-              value={searchValue}
-              placeholder="Поиск по каталогу"
-            />
-          </div>
-          </div>
+                <input
+                  type="text"
+                  onChange={(e) => updateSearchValue(e.target.value)}
+                  value={searchValue}
+                  placeholder="Поиск по каталогу"
+                />
+              </div>
+            </div>
           </div>
         </div>
       )}
