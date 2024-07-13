@@ -1,11 +1,10 @@
 import scss from "./CallBackForm.module.scss"
-import imager from "../../../public/images/back_g.png"
 
 function CallBackForm() {
   return (
     <div
       className={`${scss.callB_w} container`}
-      style={{ backgroundImage: `url(${imager})` }}
+      style={{ backgroundImage: `url(https://firebasestorage.googleapis.com/v0/b/fashion-admin-3dbe1.appspot.com/o/logo%2Fback_g.png?alt=media&token=e8437543-c2c1-4c20-8c5b-5e08411309ed)` }}
     >
       <div className={scss.des_tit}>
         <p className={scss.title}>
