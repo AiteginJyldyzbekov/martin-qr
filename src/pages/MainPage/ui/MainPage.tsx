@@ -9,6 +9,7 @@ import NewsBlock from "../../../components/NewsBlock/NewsBlock"
 import PoductBlock from "../../../components/ProductBlock/ProductBlock"
 import YoutubeBlock from "../../../components/YoutubeBlock/YoutubeBlock"
 import { useEffect } from "react"
+import BackBtn from "../../../components/backBtn/BackBtn"
 
 const MainPage = () => {
     const { getItems: getNews, items: news } = useHook("news");
@@ -24,12 +25,16 @@ const MainPage = () => {
             <MainBanner />
             <CatalogBlock />
             <PoductBlock />
+            <div className="container">
+                <img style={{ width: "100%" }} src="https://firebasestorage.googleapis.com/v0/b/fashion-admin-3dbe1.appspot.com/o/logo%2Finfo.png?alt=media&token=be254c7d-f21f-415e-961c-cc922d3d2dfb" alt="error" />
+            </div>
             <YoutubeBlock />
             <AdvantagesBlock />
             <CallBackForm />
             <NewsBlock news={news} />
             <FeedbackSlider feedbacks={feedbacks} />
             <FaqBlock />
+            <BackBtn />
         </>
     )
 }

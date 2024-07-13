@@ -49,7 +49,7 @@ const CatalogBlock: React.FC = () => {
   
 
   return (
-    <div className="container">
+    <div className={scss.wrapper + " container"}>
       <h2 className="title_g">Каталог</h2>
       {rows.map((row, rowIndex) => {
         const gridClass = row.length === 2 ? scss.grid_two : scss.grid_three;

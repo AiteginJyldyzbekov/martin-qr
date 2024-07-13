@@ -22,6 +22,7 @@
     .faq_card {
       display: flex;
       flex-direction: column;
+      padding: 5px 0 5px 0;
       cursor: pointer;
       &:not(:last-child){
       border-bottom: 3px solid black;
@@ -45,6 +46,10 @@
         .right {
           width: 30px;
           height: 30px;
+          margin-right: 15px;
+          display: flex;
+          flex-direction: column;
+          justify-content: end;
           img{
             width: 100%;
           }

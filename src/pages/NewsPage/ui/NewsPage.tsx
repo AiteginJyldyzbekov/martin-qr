@@ -1,6 +1,7 @@
 import useHook from "shared/hooks/useHook"
 import NewsBlock from "../../../components/NewsBlock/NewsBlock"
 import { useEffect } from "react";
+import BackBtn from "../../../components/backBtn/BackBtn";
 
 const NewsPage = () => {
     const { getItems: getNews, items: news, isLoading } = useHook("news");
@@ -12,6 +13,7 @@ const NewsPage = () => {
         <div>
             <p className='showPage'>Главная &nbsp; &nbsp;  / &nbsp; &nbsp;  Новости</p>
             <NewsBlock isNewsPage news={news} isLoading={isLoading} />
+            <BackBtn />
         </div>
     )
 }

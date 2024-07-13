@@ -5,6 +5,7 @@ import { useEffect } from "react"
 import CatalogDetailBlock from "../../../components/CatalogDetailBlock/CatalogDetailBlock"
 import { useParams } from "react-router-dom"
 import Preloader from "shared/ui/Preloader/Preloader"
+import BackBtn from "../../../components/backBtn/BackBtn"
 
 const ProductsPage = () => {
     const { getItems: getNews, items: news } = useHook("news")
@@ -25,6 +26,7 @@ const ProductsPage = () => {
             <CatalogDetailBlock items={items} title={productName} collectionName="products" />
             <CallBackForm />
             <NewsBlock news={news} />
+            <BackBtn />
         </>
     )
 }

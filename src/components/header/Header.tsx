@@ -61,7 +61,6 @@ const Header = () => {
               <a href="">О компании</a>
               <a href="">Каталог</a>
               <a href="">Советы</a>
-              <a href="">Доставка и оплата</a>
               <a href="">Для клиентов</a>
               <a href="">Отзывы</a>
               <a href="">Новости</a>
@@ -86,7 +85,7 @@ const Header = () => {
           <div className={scss.catalog_b}>
             <button>
               <Burger_menu />
-              <p>Каталог</p>
+              <p>КАТАЛОГ</p>
             </button>
           </div>
           <div className={scss.logo_b}>
@@ -130,7 +129,6 @@ const Header = () => {
               <Link to="#">О компании</Link>
               <Link to="#">Каталог</Link>
               <Link to="#">Советы</Link>
-              <Link to="#">Доставка и оплата</Link>
               <Link to="#">Для клиентов</Link>
               <Link to="#">Отзывы</Link>
               <Link to="#">Новости</Link>
