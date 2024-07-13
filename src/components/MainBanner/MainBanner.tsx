@@ -43,7 +43,7 @@ function MainBanner() {
 
   return (
     <div
-      className={`${scss.banner_w} container animate__animated animate__backInDown`}
+      className={`${scss.banner_w} container animate__animated animate__backInLeft`}
       style={{ backgroundImage: `url(${currentImage})` }}
     >
       <div className={scss.banner_block}>

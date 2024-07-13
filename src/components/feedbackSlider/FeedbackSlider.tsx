@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import ReviewCard from "../ReviewCard/ReviewCard";
 import scss from "./FeedbackSlider.module.scss";
 import rewImg from "../../../public/images/rew_logo.png";
@@ -5,26 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
-const reviewCards = [
-  {
-    img: rewImg,
-    name: 'Алиса Стемнова',
-    desc: 'Классный пошив, все точно по лекалам!',
-    stars: 5,
-  },
-  {
-    img: rewImg,
-    name: 'Алиса Стемнова',
-    desc: 'Классный пошив, все точно по лекалам!',
-    stars: 1,
-  },
-  {
-    img: rewImg,
-    name: 'Алиса Стемнова',
-    desc: 'Классный пошив, все точно по лекалам!',
-    stars: 1,
-  },
-];
+
 
 const sliderSettings = {
   dots: false,
@@ -52,8 +34,41 @@ const sliderSettings = {
 };
 
 const FeedbackSlider = ({ feedbacks }: { feedbacks: any }) => {
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const element = document.getElementById("feedbackSlider");
+      if (element) {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementBottom = element.getBoundingClientRect().bottom;
+
+        if (
+          !hasAnimated &&
+          elementTop < window.innerHeight &&
+          elementBottom >= 0
+        ) {
+          setHasAnimated(true);
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Check visibility on component load
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [hasAnimated]);
+
   return (
-    <div className={scss.feedback_back}>
+    <div
+      id="feedbackSlider"
+      className={`${scss.feedback_back} ${
+        hasAnimated ? "animate__animated animate__slideInDown" : ""
+      }`}
+      style={{ animationDuration: "1s" }}
+    >
       <div className={`${scss.feedback_slider_w} container`}>
         <h2>Отзывы клиентов</h2>
         <div className={scss.feedback_card_w}>
@@ -72,6 +87,6 @@ const FeedbackSlider = ({ feedbacks }: { feedbacks: any }) => {
       </div>
     </div>
   );
-}
+};
 
 export default FeedbackSlider;
