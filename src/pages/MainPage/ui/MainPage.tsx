@@ -9,7 +9,6 @@ import NewsBlock from "../../../components/NewsBlock/NewsBlock"
 import PoductBlock from "../../../components/ProductBlock/ProductBlock"
 import YoutubeBlock from "../../../components/YoutubeBlock/YoutubeBlock"
 import { useEffect } from "react"
-import ImageR from "shared/images/back_g.png"
 
 const MainPage = () => {
     const { getItems: getNews, items: news } = useHook("news");
