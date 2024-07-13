@@ -20,7 +20,7 @@ const ProductPage = () => {
       <LikedBlock />
       <div
         className={`${scss.callB_w} container`}
-        style={{ backgroundImage: `url(/images/bagg.png)`, marginTop: "70px" }}
+        style={{ backgroundImage: `url(https://firebasestorage.googleapis.com/v0/b/fashion-admin-3dbe1.appspot.com/o/logo%2Fback_g.png?alt=media&token=e8437543-c2c1-4c20-8c5b-5e08411309ed)`, marginTop: "70px" }}
       >
         <div className={scss.des_tit}>
           <p className={scss.title}>

@@ -16,22 +16,22 @@ const cards: Card[] = [
   {
     name: 'Жакеты',
     path: '/jakety',
-    img: '/images/c1.png',
+    img: '../../../public/images/c1.png',
   },
   {
     name: 'Костюмы',
     path: '/kostumy',
-    img: '/images/c2.png',
+    img: '../../../public/images/c2.png',
   },
   {
     name: 'Куртки',
     path: '/kurtki',
-    img: '/images/c3.png',
+    img: '../../../public/images/c3.png',
   },
   {
     name: 'Тренчи',
     path: '/trenchi',
-    img: '/images/c1.png',
+    img: '../../../public/images/c1.png',
   },
 ];
 
