@@ -24,7 +24,7 @@ const ProductsPage = () => {
     return (
         <>
             <CatalogDetailBlock items={items} title={productName} collectionName="products" />
-            <CallBackForm backgroundImage={ImageR} />
+            <CallBackForm />
             <NewsBlock news={news} />
         </>
     )

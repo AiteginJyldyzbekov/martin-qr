@@ -27,7 +27,7 @@ const MainPage = () => {
             <PoductBlock />
             <YoutubeBlock />
             <AdvantagesBlock />
-            <CallBackForm backgroundImage={ImageR} />
+            <CallBackForm />
             <NewsBlock news={news} />
             <FeedbackSlider feedbacks={feedbacks} />
             <FaqBlock />

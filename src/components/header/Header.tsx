@@ -11,6 +11,7 @@ import Logo from "../../../public/images/logo.svg";
 const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { catalogName, productName } = useParams()
+  const isCatalogPath = location.pathname.includes('/catalog');
   const handleOpenModal = () => {
     setIsModalOpen(true);
   };
@@ -113,7 +114,7 @@ const Header = () => {
                 </button>
               </div>
               <div className={scss.logo_b}>
-                <Link to="/"><img src="/images/logo.svg" alt="logo" /></Link>
+                <Link to="/"><img src="https://firebasestorage.googleapis.com/v0/b/fashion-admin-3dbe1.appspot.com/o/logo%2Flogo.svg?alt=media&token=68e230ff-ee60-4e7c-8256-3641989a5fd2" alt="logo" /></Link>
               </div>
               <div className={scss.right_top__header}>
                 <a href="">
@@ -140,7 +141,12 @@ const Header = () => {
                 <p>Посик по каталогу</p>
                 <input
                   type="text"
-                  onChange={(e) => updateSearchValue(e.target.value)}
+                  onClick={() => {
+                    if(!isCatalogPath){
+                      navigate("catalog/blazer")
+                    }
+                    setIsModalOpen(false)
+                  }}
                   value={searchValue}
                   placeholder="Поиск по каталогу"
                 />
