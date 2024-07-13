@@ -20,7 +20,7 @@ const cards: Card[] = [
   },
   {
     name: "Костюмы",
-    path: "/catusealog/costume",
+    path: "/catalog/costume",
     img: c2,
   },
   {
