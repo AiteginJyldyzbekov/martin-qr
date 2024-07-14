@@ -11,13 +11,14 @@ import YoutubeBlock from "../../../components/YoutubeBlock/YoutubeBlock"
 import { useEffect, useRef } from "react"
 import BackBtn from "../../../components/backBtn/BackBtn"
 import { useScroll } from "../../../components/scrollProvider/ScrollProvider"
+import Preloader from "shared/ui/Preloader/Preloader"
 
 const MainPage = () => {
     const { getItems: getNews, items: news } = useHook("news");
     const { getItems: getFeedback, items: feedbacks } = useHook("feedback")
     const { getItems: getAds, items: ads, isLoading } = useHook("ad")
 
-  
+
     const { bannerRef, catalogRef, productRef, youtubeRef, advantagesRef, callbackRef, newsRef, feedbackRef, faqRef } = useScroll();
 
     useEffect(() => {
@@ -26,9 +27,7 @@ const MainPage = () => {
         getAds();
     }, []);
 
-    const scrollToRef = (ref:any) => {
-        ref.current.scrollIntoView({ behavior: 'smooth' });
-    };
+    if (isLoading) return <Preloader />
 
     return (
         <>

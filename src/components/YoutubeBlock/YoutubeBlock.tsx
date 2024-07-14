@@ -1,32 +1,35 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import scss from "./YoutubeBlock.module.scss";
 
 function YoutubeBlock() {
   const [hasAnimated, setHasAnimated] = useState(false);
+  const elementRef = useRef(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const element = document.getElementById('youtubeBlock');
-      if (element) {
-        const elementTop = element.getBoundingClientRect().top;
-        const elementBottom = element.getBoundingClientRect().bottom;
-
-        if (!hasAnimated && elementTop < window.innerHeight && elementBottom >= 0) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
           setHasAnimated(true);
+          observer.disconnect();
         }
-      }
-    };
+      },
+      { threshold: 0.1 } // Элемент будет считаться видимым, если 10% его площади видны
+    );
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Проверяем видимость при загрузке компонента
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
+    }
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      if (elementRef.current) {
+        observer.unobserve(elementRef.current);
+      }
     };
-  }, [hasAnimated]);
+  }, []);
 
   return (
     <div
+      ref={elementRef}
       id="youtubeBlock"
       className={`${scss.y_back_w} ${hasAnimated ? 'animate__animated animate__backInRight' : ''}`}
       style={{ animationDuration: '2s' }}
