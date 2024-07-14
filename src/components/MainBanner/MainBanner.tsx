@@ -24,7 +24,7 @@ const MainBanner = ({ ads, isLoading }: any) => {
 
   return (
     <div
-      className={`${scss.banner_w} container animate__animated`}
+      className={`${scss.banner_w} container animate__animated animate__backInLeft`}
       style={{ backgroundImage: `url(${currentImage})` }}
       key={key}
     >

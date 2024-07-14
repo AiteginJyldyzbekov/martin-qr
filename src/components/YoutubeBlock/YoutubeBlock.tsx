@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import scss from "./YoutubeBlock.module.scss";
-import 'animate.css';
 
 function YoutubeBlock() {
   const [hasAnimated, setHasAnimated] = useState(false);
