@@ -15,23 +15,23 @@ interface Card {
 const cards: Card[] = [
   {
     name: 'Жакеты',
-    path: '/jakety',
-    img: '/images/c1.png',
+    path: '/catalog/blazer',
+    img: '../../../public/images/c1.png',
   },
   {
     name: 'Костюмы',
-    path: '/kostumy',
-    img: '/images/c2.png',
+    path: '/catalog/costume',
+    img: '../../../public/images/c2.png',
   },
   {
     name: 'Куртки',
-    path: '/kurtki',
-    img: '/images/c3.png',
+    path: '/catalog/jacket',
+    img: '../../../public/images/c3.png',
   },
   {
     name: 'Тренчи',
-    path: '/trenchi',
-    img: '/images/c1.png',
+    path: '/catalog/trench',
+    img: '../../../public/images/c1.png',
   },
 ];
 

@@ -84,7 +84,7 @@ const FaqBlock: React.FC = () => {
             <div className={scss.top}>
               <div className={scss.left}>{item.question}</div>
               <div className={scss.right}>
-                <img src="/images/arrow.svg" alt="" />
+                <img src="https://firebasestorage.googleapis.com/v0/b/fashion-admin-3dbe1.appspot.com/o/logo%2Farrow.svg?alt=media&token=ef090c7c-412f-4dac-8225-f93c38ed92ac" alt="" />
               </div>
             </div>
             <div className={scss.bottom}>{item.answer}</div>

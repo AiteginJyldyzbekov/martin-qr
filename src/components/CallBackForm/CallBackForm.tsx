@@ -40,7 +40,7 @@ const CallBackForm: React.FC<CallBackFormProps> = ({ backgroundImage }) => {
         hasAnimated ? "animate__animated animate__fadeInRight" : ""
       }`}
       style={{ 
-        backgroundImage: `url(${backgroundImage})`,
+        backgroundImage: `url(https://firebasestorage.googleapis.com/v0/b/fashion-admin-3dbe1.appspot.com/o/logo%2Fback_g.png?alt=media&token=e8437543-c2c1-4c20-8c5b-5e08411309ed)`,
         animationDuration: "2s" 
       }}
     >

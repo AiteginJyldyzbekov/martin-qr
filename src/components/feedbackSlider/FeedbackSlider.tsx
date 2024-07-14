@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from "react";
 import ReviewCard from "../ReviewCard/ReviewCard";
 import scss from "./FeedbackSlider.module.scss";
-import rewImg from "../../../public/images/rew_logo.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-
-
 
 const sliderSettings = {
   dots: false,

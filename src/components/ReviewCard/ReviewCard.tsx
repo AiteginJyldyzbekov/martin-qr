@@ -14,7 +14,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ img, name, desc, stars }) => {
   return (
     <div className={scss.review_card_wrapper}>
       <div className={scss.left}>
-        <img src={img} alt={name} width={100} height={100} className={scss.review_img} />
+        <img src={img} alt={name} width={80} height={70} className={scss.review_img} />
       </div>
       <div className={scss.right}>
         <p className={scss.title}>{name}</p>

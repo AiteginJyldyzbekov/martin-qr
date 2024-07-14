@@ -5,6 +5,7 @@ import { useEffect } from "react"
 import CatalogDetailBlock from "../../../components/CatalogDetailBlock/CatalogDetailBlock"
 import { useParams } from "react-router-dom"
 import Preloader from "shared/ui/Preloader/Preloader"
+import BackBtn from "../../../components/backBtn/BackBtn"
 
 const CatalogPage = () => {
     const { getItems: getNews, items: news } = useHook("news")
@@ -23,8 +24,9 @@ const CatalogPage = () => {
     return (
         <>
             <CatalogDetailBlock items={items} title={catalogName} collectionName="catalog" />
-            <CallBackForm backgroundImage={"/images/back_g.png"} />
+            <CallBackForm />
             <NewsBlock news={news} />
+            <BackBtn />
         </>
     )
 }

@@ -14,24 +14,24 @@ interface Card {
 
 const cards: Card[] = [
   {
-    name: "Жакеты",
-    path: "/jakety",
-    img: "/images/c1.png",
+    name: 'Жакеты',
+    path: '/finished-product/blazer',
+    img: '../../../public/images/c1.png',
   },
   {
-    name: "Костюмы",
-    path: "/kostumy",
-    img: "/images/c2.png",
+    name: 'Костюмы',
+    path: '/finished-product/costume',
+    img: '../../../public/images/c2.png',
   },
   {
-    name: "Куртки",
-    path: "/kurtki",
-    img: "/images/c3.png",
+    name: 'Куртки',
+    path: '/finished-product/jacket',
+    img: '../../../public/images/c3.png',
   },
   {
-    name: "Тренчи",
-    path: "/trenchi",
-    img: "/images/c1.png",
+    name: 'Тренчи',
+    path: '/finished-product/trench',
+    img: '../../../public/images/c1.png',
   },
 ];
 

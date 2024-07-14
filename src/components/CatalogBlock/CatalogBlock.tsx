@@ -75,7 +75,7 @@ const CatalogBlock: React.FC = () => {
   return (
     <div
       id="youtubeBlock"
-      className={`container ${
+      className={scss.wrapper + ` container ${
         hasAnimated ? "animate__animated animate__backInRight" : ""
       }`}
       style={{ animationDirection: "2s" }}

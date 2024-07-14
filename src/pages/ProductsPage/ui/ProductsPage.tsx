@@ -2,10 +2,10 @@ import NewsBlock from "../../../components/NewsBlock/NewsBlock"
 import CallBackForm from "../../../components/CallBackForm/CallBackForm"
 import useHook from "shared/hooks/useHook"
 import { useEffect } from "react"
-import ImageR from "shared/images/back_g.png"
 import CatalogDetailBlock from "../../../components/CatalogDetailBlock/CatalogDetailBlock"
 import { useParams } from "react-router-dom"
 import Preloader from "shared/ui/Preloader/Preloader"
+import BackBtn from "../../../components/backBtn/BackBtn"
 
 const ProductsPage = () => {
     const { getItems: getNews, items: news } = useHook("news")
@@ -24,8 +24,9 @@ const ProductsPage = () => {
     return (
         <>
             <CatalogDetailBlock items={items} title={productName} collectionName="products" />
-            <CallBackForm backgroundImage={ImageR} />
+            <CallBackForm />
             <NewsBlock news={news} />
+            <BackBtn />
         </>
     )
 }
