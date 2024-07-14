@@ -1,5 +1,7 @@
 import Slider from "react-slick";
 import scss from "./ProductDetailBlock.module.scss";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const baseUrl = "/images";
 const imagePaths = ["c1.png", "c1.png", "c1.png", "c1.png", "c1.png", "c1.png", "c1.png"]; // Массив с одной картинкой
@@ -9,7 +11,7 @@ interface ProductDetailBlockProps {
 }
 
 const ProductDetailBlock: React.FC<ProductDetailBlockProps> = ({ item }) => {
-
+  const [size, setSize] = useState<string | null>(null);
   const settings = {
     customPaging: function (i: any) {
       const dotClass = item.images.length >= 2 ? "large" : "small";
@@ -28,6 +30,10 @@ const ProductDetailBlock: React.FC<ProductDetailBlockProps> = ({ item }) => {
     className: scss.custom_slider_class,
   };
 
+  const handleSizeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSize(event.target.value);
+  };
+
   return (
     <div className={`${scss.product_detail_w} container`}>
       <div className={scss.product_left}>
@@ -44,7 +50,6 @@ const ProductDetailBlock: React.FC<ProductDetailBlockProps> = ({ item }) => {
         <div className={scss.price_w}>
           <p className={scss.price}>{item?.price} сом</p>
         </div>
-
         <p className={scss.product_desc}>
           {item?.desc}
         </p>
@@ -54,9 +59,9 @@ const ProductDetailBlock: React.FC<ProductDetailBlockProps> = ({ item }) => {
             <p>Определите размер</p>
           </div>
           <div className={scss.size_bottom}>
-            <select name="" id="">
+            <select name="" id="" onChange={handleSizeChange}>
               {item?.size.map((el: string) => (
-                <option value="">{el}</option>
+                <option value={el} key={el}>{el}</option>
               ))}
             </select>
           </div>
@@ -69,7 +74,7 @@ const ProductDetailBlock: React.FC<ProductDetailBlockProps> = ({ item }) => {
             ))}
           </div>
         </div>
-        <button>Оставить заявку</button>
+        <Link target="_blank" to={`https://api.whatsapp.com/send/?phone=996779164076&text=Здравствуйте,%20хочу%20заказать%20${item?.title},${item?.price}%20сом%20${size ? `размер%20${size}` : `размер%20${item?.size[0]}`}`}>Оставить заявку</Link>
       </div>
       <div></div>
     </div>

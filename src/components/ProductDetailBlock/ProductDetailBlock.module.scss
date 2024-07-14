@@ -79,7 +79,9 @@
       }
     }
 
-    >button {
+    >a {
+      display: flex;
+      justify-content: center;
       padding: 20px;
       background-color: #000000;
       border: 1px solid black;
