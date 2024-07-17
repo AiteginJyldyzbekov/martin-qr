@@ -24,14 +24,6 @@ function Footer() {
                         <div className={scss.ber}>
                             <Link to="/" onClick={() => scrollToRef(catalogRef)}>Каталог</Link>
                             <a href="/catalog/costume">Костюмы</a>
-                            <a>Верхняя одежда</a>
-                            <a>Трикотаж</a>
-                            <a>Платья</a>
-                            <a>Блузки и рубашки</a>
-                            <a>Брюки</a>
-                            <a>Джинсы</a>
-                            <a>Обувь</a>
-                            <a>Аксессуары</a>
                         </div>
                         <div className={scss.bet}>
                             <p>Покупателям</p>

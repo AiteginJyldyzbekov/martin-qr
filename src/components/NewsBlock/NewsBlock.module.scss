@@ -30,6 +30,7 @@
 @media screen and (max-width: 768px) {
     .news_card_w {
         grid-template-columns: 1fr;
+        gap: 100px;
     }
     button {
         width: 100% !important;
