@@ -93,6 +93,10 @@ button {
   font-weight: 500;
   margin-left: 100px;
   color: #383D45;
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+  }
 }
 
 .container {
