@@ -81,21 +81,23 @@ const CatalogBlock: React.FC = () => {
         style={{ animationDirection: "2s" }}
       >
         <h2 className="title_g">Каталог</h2>
-        {rows.map((row, rowIndex) => {
-          const gridClass = row.length === 2 ? scss.grid_two : scss.grid_three;
-          return (
-            <div key={rowIndex} className={`${scss.c_card_wrapper} ${gridClass}`}>
-              {row.map((el, index) => (
-                <CatalogCard
-                  key={index}
-                  name={el.name}
-                  path={el.path}
-                  img={el.img}
-                />
-              ))}
-            </div>
-          );
-        })}
+        <div className={scss.grid__wrap}>
+          {rows.map((row, rowIndex) => {
+            const gridClass = row.length === 2 ? scss.grid_two : scss.grid_three;
+            return (
+              <div key={rowIndex} className={`${scss.c_card_wrapper} ${gridClass}`}>
+                {row.map((el, index) => (
+                  <CatalogCard
+                    key={index}
+                    name={el.name}
+                    path={el.path}
+                    img={el.img}
+                  />
+                ))}
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
