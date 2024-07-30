@@ -4,6 +4,7 @@ import BackBtn from "../../../components/backBtn/BackBtn";
 import useHook from "shared/hooks/useHook";
 import { useEffect } from "react";
 import Osnov from "../../../components/osnov/Osnov";
+import AboutBlock from "../../../components/AboutBlock/AboutBlock";
 
 const AboutUs = () => {
 
@@ -15,6 +16,7 @@ const AboutUs = () => {
   return (
     <>
       <MainBanner ads={ads} idLoading={isLoading} />
+      <AboutBlock />
       <Osnov />
       <CallBackForm />
       <BackBtn />
