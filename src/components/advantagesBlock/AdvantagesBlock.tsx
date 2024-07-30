@@ -38,7 +38,7 @@ const AdvantagesBlock: React.FC = () => {
       style={{ animationDuration: "2s" }}
     >
       <div className={scss.b_b}><p>5</p></div>
-      <div className={scss.b_r}><p>Причин с нами работать</p></div>
+      <div className={scss.b_r}><p><span>5</span> Причин с нами работать</p></div>
       <div className={scss.b_t}>
         <p className={scss.title}>Уникальные разработки.</p>
         <p className={scss.description}>

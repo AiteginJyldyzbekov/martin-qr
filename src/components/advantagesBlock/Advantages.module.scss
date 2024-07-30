@@ -10,6 +10,8 @@
     padding: 80px 0;
     @media (max-width: 768px) {
       grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto ;
+margin-top: 50px;
       grid-template-areas:
       "b2 b2"
       "b3 b3"
@@ -33,6 +35,7 @@
           border: 0;
           border-right: 0;
           position: relative;
+          height: 100px;
           &:not(:first-child,:nth-child(2)){
             border-left: 3px solid black;
             padding: 0;
@@ -69,6 +72,8 @@
         line-height: 0.7;
         @media (max-width: 768px) {
           font-size: 100px;
+          display: none;
+
         }
         }
         
@@ -76,7 +81,6 @@
     .b_r{
         grid-area: b2;
         
-
         // align-items: flex-end;
         justify-content: flex-end;
         p{
@@ -84,10 +88,15 @@
             font-weight: 700;
             color: #D8C1AE;
             display: flex;
+
+            span{
+              display: none;
+            }
             @media (max-width: 768px) {
-              &::before{
-                content: "5 ";
-                margin-right: 10px;
+            display: block;
+              
+              span{
+                display: inline;
               }
             }
         }
@@ -97,7 +106,6 @@
         border-right: 3px solid black;
         @media (max-width: 768px) {
           border-right: 0;
-          position: absolute;
         }
       }
       .b_y{

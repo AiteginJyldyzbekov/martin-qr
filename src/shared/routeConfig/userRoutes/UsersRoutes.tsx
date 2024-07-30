@@ -6,6 +6,7 @@ import { ProductsPage } from 'pages/ProductsPage'
 import { NewsDetailPage } from 'pages/NewsDetailPage'
 import { NewsPage } from 'pages/NewsPage'
 import CatalogDetailPage from 'pages/ProductPage/ui/CatalogDetailPage'
+import AboutUs from 'pages/aboutusPage/ui/AboutUs'
 
 export enum UserRoutes {
   MAIN = 'main',
@@ -14,7 +15,8 @@ export enum UserRoutes {
   PRODUCT = 'product',
   PRODUCT_DETAIL = 'product_detail',
   NEWS = 'news',
-  NEWS_DETAIL = 'news_detail'
+  NEWS_DETAIL = 'news_detail',
+  ABOUT_US = 'about_us'
 }
 
 export const UserRoutePath: Record<UserRoutes, string> = {
@@ -25,6 +27,7 @@ export const UserRoutePath: Record<UserRoutes, string> = {
   [UserRoutes.PRODUCT_DETAIL]: '/finished-product/:productName/product/:productId',
   [UserRoutes.NEWS]: '/news',
   [UserRoutes.NEWS_DETAIL]: '/news/:id',
+  [UserRoutes.ABOUT_US]: '/about',
 }
 
 export const UserRouteConfig: Record<UserRoutes, RouteProps> = {
@@ -55,5 +58,9 @@ export const UserRouteConfig: Record<UserRoutes, RouteProps> = {
   [UserRoutes.NEWS_DETAIL]: {
     path: UserRoutePath.news_detail,
     element: <NewsDetailPage />
+  },
+  [UserRoutes.ABOUT_US]: {
+    path: UserRoutePath.about_us,
+    element: <AboutUs />
   },
 }

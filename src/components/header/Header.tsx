@@ -60,7 +60,7 @@ const Header = () => {
           <div className={scss.top_header + " container"}>
             <div className={scss.left_top__header}>
             <Link to="/" onClick={() => scrollToRef(bannerRef)}>Главная</Link>
-            <Link to="/" onClick={() => scrollToRef(youtubeRef)}>О компании</Link>
+            <Link to="/about" onClick={() => scrollToRef(youtubeRef)}>О компании</Link>
             <Link to="/" onClick={() => scrollToRef(catalogRef)}>Каталог</Link>
             <Link to="/" onClick={() => scrollToRef(faqRef)}>Советы</Link>
             <Link to="/" onClick={() => scrollToRef(advantagesRef)}>Для клиентов</Link>
